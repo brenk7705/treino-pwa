@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0d10;
+  --color-card: #14171c;
+  --color-card2: #1c2027;
+  --color-line: #2a2f38;
+  --color-ink: #eef1f4;
+  --color-mute: #8d96a3;
+  --color-accent: #c8f031;
+  --color-accent-ink: #11140a;
+  --color-warn: #f5b13d;
+  --color-done: #3ddc97;
+  --color-info: #5cc8ff;
+  --color-danger: #ff6b6b;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+body {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.num {
+  font-variant-numeric: tabular-nums;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* crossfade entre posição inicial e final (~0,8 s cada) */
+@keyframes xfade {
+  0%,
+  40% {
+    opacity: 0;
+  }
+  50%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.xfade-top {
+  animation: xfade 1.6s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.pop {
+  animation: pop 0.18s ease-out;
+}
+@keyframes pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(200 240 49 / 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgb(200 240 49 / 0);
+  }
+}
+.ring-pulse {
+  animation: pulse-ring 1s ease-in-out infinite;
+}
