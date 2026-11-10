@@ -92,3 +92,8 @@ input[type='number'] {
 .ring-pulse {
   animation: pulse-ring 1s ease-in-out infinite;
 }
+
+/* esconde o selo "Powered by Netlify" (cobre a barra de navegação) */
+#nl-badge-frame {
+  display: none !important;
+}

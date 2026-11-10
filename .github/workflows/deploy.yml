@@ -1,8 +1,8 @@
-name: Deploy no GitHub Pages
+name: Deploy no GitHub Pages (opcional)
 
+# O app é publicado no Netlify (npm run deploy). Este workflow só roda manualmente,
+# caso um dia você ative o GitHub Pages (Settings → Pages → Source: GitHub Actions).
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

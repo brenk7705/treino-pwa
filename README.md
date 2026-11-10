@@ -20,26 +20,21 @@ npm run build      # gera dist/
 
 `npm run fetch-exercises` baixa novamente as imagens do [free-exercise-db](https://github.com/yuhonas/free-exercise-db) (domínio público) para `public/exercises/` e mostra quais exercícios do plano ficaram sem correspondência (esses usam boneco SVG). O mapeamento fica em `src/data/exerciseMap.ts`.
 
-## Publicar no GitHub Pages
+## Publicação
 
-1. Crie um repositório **público** no GitHub chamado `treino-pwa` (pode ser outro nome — o build se ajusta sozinho).
-2. Na pasta do projeto:
-   ```bash
-   git init -b main
-   git add .
-   git commit -m "Treino PWA"
-   git remote add origin https://github.com/SEU_USUARIO/treino-pwa.git
-   git push -u origin main
-   ```
-3. No GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-4. Aba **Actions**: o workflow “Deploy no GitHub Pages” roda (testes + build + deploy). Se tiver rodado antes do passo 3, clique em “Re-run jobs”.
-5. Link final: **`https://SEU_USUARIO.github.io/treino-pwa/`**
+**App no ar: https://treino-brenk.netlify.app** (Netlify, projeto `treino-brenk`).
 
-Cada `git push` na `main` publica uma nova versão; o app se atualiza sozinho na próxima vez que você abrir com internet.
+Para publicar uma nova versão (precisa do Netlify CLI logado: `npm i -g netlify-cli` e `netlify login`):
+
+```bash
+npm run deploy
+```
+
+O código fica em https://github.com/brenk7705/treino-pwa. O workflow do GitHub Pages em `.github/workflows/deploy.yml` é opcional e só roda manualmente.
 
 ## Instalar no celular
 
-Abra o link uma vez com internet (isso baixa tudo para uso offline):
+Abra **https://treino-brenk.netlify.app** uma vez com internet (isso baixa tudo para uso offline):
 
 - **Android (Chrome)**: menu ⋮ → **Instalar app** (ou “Adicionar à tela inicial”).
 - **iPhone (Safari)**: botão **Compartilhar** → **Adicionar à Tela de Início**. Precisa ser pelo Safari.
